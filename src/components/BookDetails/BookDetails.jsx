@@ -3,12 +3,21 @@
 
 import { useParams } from "react-router-dom";
 import useBooksData from "../../Hooks/useBooksData";
+import { saveDataToLocalStorage } from "../../utility/localStorage";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const BookDetails = () => {
     const { books } = useBooksData();
     const { id } = useParams();
     const idInt = parseInt(id);
     const book = books.find(item => item.id == idInt);
+
+    const handleReadBtn = () => {
+        saveDataToLocalStorage(book);
+        console.log('read');
+    }
     //console.log(book);
     const { image, tags, bookName, author, category, rating, review,totalPages,publisher,yearOfPublishing } = book || {};
     return (
@@ -47,11 +56,12 @@ const BookDetails = () => {
                 </div>
 
                  <div className=" flex gap-7 items-center">
-                    <button className="work px-8 py-3 text-xl rounded-xl font-semibold border border-gray-800">Read</button>
+                    <button onClick={handleReadBtn} className="work px-8 py-3 text-xl rounded-xl font-semibold border border-gray-800">Read</button>
                     <button className="work px-8 py-3 text-xl rounded-xl text-white font-semibold border border-[#50B1C9]  bg-[#50B1C9]">Wishlist</button>
                 </div>       
 
             </div>
+            <ToastContainer />
         </div>
     );
 };
