@@ -12,18 +12,18 @@ const BookDetails = () => {
     //console.log(book);
     const { image, tags, bookName, author, category, rating, review,totalPages,publisher,yearOfPublishing } = book || {};
     return (
-        <div className="card lg:card-side gap-10 rounded-2xl">
+        <div className="card lg:card-side gap-10 rounded-2xl mb-10">
             <figure className="lg:w-[50%] w-full h-full bg-base-200 rounded-2xl py-28"><img className="w-[50%] rounded-3xl" src={image} alt="book" /></figure>
             <div className=" lg:w-[50%] w-full py-0 md:space-y-5 space-y-3">
-                <h2 className="card-title text-3xl text-[#131313]">{bookName}</h2>
+                <h2 className="card-title text-3xl text-[#131313] play-fair">{bookName}</h2>
                 <p className='work font-medium text-xl text-[#13131366] '>By: {author}</p>
                 <h3 className="border-y text-xl font-medium text-[#131313B9] border-gray-200 py-6">{category}</h3>
                 <p className="text-xl pt-4">{review}</p>
 
                 <div className='flex lg:gap-8 gap-4 items-center border-b border-gray-200 pb-8'>
-                    <h2 className="text-2xl font-bold text-[#131313]">Tags:</h2>
+                    <h2 className="text-2xl font-bold text-[#131313]">Tag:</h2>
                         {
-                            tags.map((item, idx) => <span className='work md:text-xl text-[#23BE0A] font-medium bg-[#23BE0A0D] px-4 py-2 rounded-3xl' key={idx}>{item}</span>)
+                            tags?.map((item, idx) => <span className='work md:text-xl text-[#23BE0A] font-medium bg-[#23BE0A0D] px-4 py-2 rounded-3xl' key={idx}>{item}</span>)
                         }
                 </div>
 
