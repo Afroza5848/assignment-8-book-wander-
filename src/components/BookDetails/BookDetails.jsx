@@ -3,9 +3,11 @@
 
 import { useParams } from "react-router-dom";
 import useBooksData from "../../Hooks/useBooksData";
-import { saveDataToLocalStorage } from "../../utility/localStorage";
-import { ToastContainer } from "react-toastify";
+import { saveDataToLocalStorage, saveWishDataToLocalStorage } from "../../utility/localStorage";
+import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import useLocalStorage from "../../Hooks/useLocalStorage";
+
 
 
 const BookDetails = () => {
@@ -14,12 +16,29 @@ const BookDetails = () => {
     const idInt = parseInt(id);
     const book = books.find(item => item.id == idInt);
 
+    const { image, tags, bookName, author, category, rating, review,totalPages,publisher,yearOfPublishing } = book || {};
     const handleReadBtn = () => {
         saveDataToLocalStorage(book);
         console.log('read');
     }
+
+    const {localData} = useLocalStorage();
+
+    const handleWishlistBtn = () => {
+           const exits = localData.filter(data => data.id == book.id)
+           console.log(localData);
+          if(exits){
+            
+             toast.error('already ase');
+          }
+          else{
+            saveWishDataToLocalStorage(book);
+          }
+          
+    }
+
     //console.log(book);
-    const { image, tags, bookName, author, category, rating, review,totalPages,publisher,yearOfPublishing } = book || {};
+    
     return (
         <div className="card lg:card-side gap-10 rounded-2xl mb-10">
             <figure className="lg:w-[50%] w-full h-full bg-base-200 rounded-2xl py-28"><img className="w-[50%] rounded-3xl" src={image} alt="book" /></figure>
@@ -57,7 +76,7 @@ const BookDetails = () => {
 
                  <div className=" flex gap-7 items-center">
                     <button onClick={handleReadBtn} className="work px-8 py-3 text-xl rounded-xl font-semibold border border-gray-800">Read</button>
-                    <button className="work px-8 py-3 text-xl rounded-xl text-white font-semibold border border-[#50B1C9]  bg-[#50B1C9]">Wishlist</button>
+                    <button onClick={handleWishlistBtn} className="work px-8 py-3 text-xl rounded-xl text-white font-semibold border border-[#50B1C9]  bg-[#50B1C9]">Wishlist</button>
                 </div>       
 
             </div>
