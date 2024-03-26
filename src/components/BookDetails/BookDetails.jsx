@@ -25,14 +25,14 @@ const BookDetails = () => {
     const {localData} = useLocalStorage();
 
     const handleWishlistBtn = () => {
-           const exits = localData.filter(data => data.id == book.id)
-           console.log(localData);
+           const exits = localData.find(id => id == book.id)
+           console.log(exits);
           if(exits){
             
-             toast.error('already ase');
+            return toast.error('already ase');
           }
           else{
-            saveWishDataToLocalStorage(book);
+           return saveWishDataToLocalStorage(book);
           }
           
     }
