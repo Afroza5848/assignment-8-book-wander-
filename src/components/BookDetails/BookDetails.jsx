@@ -6,7 +6,7 @@ import useBooksData from "../../Hooks/useBooksData";
 import { saveDataToLocalStorage, saveWishDataToLocalStorage } from "../../utility/localStorage";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import useLocalStorage from "../../Hooks/useLocalStorage";
+
 
 
 
@@ -23,16 +23,15 @@ const BookDetails = () => {
         console.log('read');
     }
 
-    const {localData} = useLocalStorage();
+  
 
     const handleWishlistBtn = () => {
-           const exits = localData.filter(data => data.id == book.id)
-           console.log(exits);
-          if(!exits){
-            saveWishDataToLocalStorage(book);
-          }
-           toast.error('already ase');
-          
+         const readBooksToLocalStorage = JSON.parse(localStorage.getItem('books')) ;
+         const exits = readBooksToLocalStorage.find(data => data.id == book.id);
+         if(exits) {
+            return toast.error('Already read this book');
+         }
+         saveWishDataToLocalStorage(book) ;
           
     }
 
