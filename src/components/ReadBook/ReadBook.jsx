@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 const ReadBook = ({ data }) => {
-    const {id, image, bookName, author, tags, yearOfPublishing,publisher,totalPages,category ,rating } = data
+    const {id, image, bookName, author, tags, yearOfPublishing,publisher,totalPages,category ,rating } = data || {}
     return (
         <div className="card card-side gap-8 border border-gray-200">
             <figure className="w-[25%]"><img className='bg-base-200 px-16  py-10 rounded-2xl my-5 ml-5' src={image} alt="Movie" /></figure>

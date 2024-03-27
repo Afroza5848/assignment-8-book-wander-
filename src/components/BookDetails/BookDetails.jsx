@@ -10,6 +10,7 @@ import useLocalStorage from "../../Hooks/useLocalStorage";
 
 
 
+
 const BookDetails = () => {
     const { books } = useBooksData();
     const { id } = useParams();
@@ -25,15 +26,13 @@ const BookDetails = () => {
     const {localData} = useLocalStorage();
 
     const handleWishlistBtn = () => {
-           const exits = localData.find(id => id == book.id)
+           const exits = localData.filter(data => data.id == book.id)
            console.log(exits);
-          if(exits){
-            
-            return toast.error('already ase');
+          if(!exits){
+            saveWishDataToLocalStorage(book);
           }
-          else{
-           return saveWishDataToLocalStorage(book);
-          }
+           toast.error('already ase');
+          
           
     }
 
