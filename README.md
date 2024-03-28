@@ -5,6 +5,6 @@
 
 - Browse through a different collection of books.
 - View detailed information about each book including author, review, rating, etc.
-- Filter books by category.
+- Filter books by Rating, Total pages, Publish Year.
 - Add books to favorites or wishlist (optional feature).
 - Option to see all read book name and total pages bar chart.
