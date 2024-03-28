@@ -1,8 +1,8 @@
-
+import faqs from '../../assets/image/faq.jpg'
 
 const Faqs = () => {
     return (
-        <div className="grid lg:grid-cols-2 grid-cols-1 my-16 gap-8">
+        <div className="flex justify-between items-center lg:flex-row flex-col-reverse h-full my-16 gap-8">
             <div>
                 <section className=" border border-gray-200 p-6 rounded-2xl dark:text-gray-800">
                     <div className="container flex flex-col justify-center bg-base-200 rounded px-4 py-8 mx-auto md:p-8">
@@ -38,26 +38,11 @@ const Faqs = () => {
                     </div>
                 </section>
             </div>
-            <section className=" dark:text-gray-800 border border-gray-200 p-6 rounded-2xl">
-                <form className="container w-full h-full p-8 mx-auto space-y-6 rounded-md shadow bg-base-200">
-                    <h2 className="w-full text-3xl font-bold leading-tight">Ask More Question</h2>
-                    <div>
-                        <label  className="block mb-1 ml-1">Name</label>
-                        <input id="name" type="text" placeholder="Your name" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 bg-white pb-6" />
-                    </div>
-                    <div>
-                        <label className="block mb-1 ml-1">Email</label>
-                        <input id="email" type="email" placeholder="Your email" required="" className="block w-full p-2 pb-6 rounded focus:outline-none focus:ring focus:ring-opacity-25 " />
-                    </div>
-                    <div>
-                        <label className="block mb-1 ml-1">Question</label>
-                        <textarea id="message" type="text" placeholder="Write Your Question..." className="block w-full p-2 pb-24 rounded autoexpand focus:outline-none focus:ring focus:ring-opacity-25dark:bg-gray-100"></textarea>
-                    </div>
-                    <div>
-                        <button type="submit" className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring  focus:ring-opacity-50 dark:bg-green-500   dark:text-gray-50">Send</button>
-                    </div>
-                </form>
-            </section>
+            
+               <div>
+                <img className='rounded' src={faqs} alt="faqs" />
+               </div>
+           
         </div>
     );
 };
