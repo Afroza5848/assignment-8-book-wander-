@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 
 const ReadBook = ({ data }) => {
     const { id, image, bookName, author, tags, yearOfPublishing, publisher, totalPages, category, rating } = data || {}
+
+    
     return (
         <div className="card lg:card-side gap-8 border border-gray-200">
             <figure className="lg:w-[25%] w-[100%] flex justify-center"><img className='bg-base-200 lg:px-16 p-10  lg:py-10 rounded-2xl my-5 ml-5' src={image} alt="Movie" /></figure>
@@ -32,7 +34,7 @@ const ReadBook = ({ data }) => {
                     <p className="flex gap-2 items-center justify-center"><HiOutlineUsers /> Publisher:  {publisher}</p>
                     <p className="flex gap-2 items-center justify-center"> <AiOutlineFilePdf /> Page: {totalPages}</p>
                 </div>
-                
+
                 <div className="flex lg:items-center gap-5 pt-4 lg:flex flex-col lg:flex-row">
                     <p className="work md:text-xl text-[#328EFF] font-medium bg-[#328EFF0D] px-4 py-2 rounded-3xl">Category: {category}</p>
                     <p className="work md:text-xl text-[#FFAC33] font-medium bg-[#FFAC330D] px-4 py-2 rounded-3xl">Rating: {rating}</p>

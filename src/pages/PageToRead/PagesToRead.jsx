@@ -37,7 +37,7 @@ const PagesToRead = () => {
   return (
     <div className='md:flex justify-center items-center my-12'>
       <BarChart
-        width={800}
+        width={1200}
         height={400}
         data={reChart}
         margin={{
