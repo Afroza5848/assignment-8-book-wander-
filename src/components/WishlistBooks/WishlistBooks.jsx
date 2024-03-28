@@ -42,7 +42,7 @@ const WishlistBooks = () => {
                 <details className="dropdown">
                     <summary className="m-1 btn bg-green-500 text-white text-xl font-semibold">Sort By <IoIosArrowDown /></summary>
                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-200 rounded-box w-52">
-                        <li onClick={()=>handleSortRating(sortedRating)}><a>Rating</a></li>
+                        <li onClick={()=> handleSortRating(sortedRating)}><a>Rating</a></li>
                         <li onClick={()=> handleSortPage(sortedTotalPage)}><a>Number of pages</a></li>
                         <li onClick={()=> handleSortPublishYear(sortedPublishYear)}><a>Publisher Year</a></li>
                     </ul>

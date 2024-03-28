@@ -13,9 +13,10 @@ const ReadBooks = () => {
         const data = JSON.parse(localStorage.getItem('books')) || [];
         setLocalData(data)
     }, []);
-// sort rating
+
+    // sort rating
     const handleSortRating = () => {
-        const ratingSort = [localData].sort((a,b) =>  b.rating - a.rating);
+        const ratingSort = localData.sort((a,b) =>  b.rating - a.rating);
         if(ratingSort){
             setSortedRating(ratingSort);
         }
@@ -27,6 +28,7 @@ const ReadBooks = () => {
             setSortedTotalPages(totalPageSort);
         }
     }
+    
     // sort publish year
     const handleSortPublishYear = () => {
         const totalYearSort = localData.sort((a,b)=> b.yearOfPublishing - a.yearOfPublishing);
@@ -36,12 +38,12 @@ const ReadBooks = () => {
     }
    
     return (
-        <div>
+        <div className="mb-10">
             <div className="flex justify-center items-center mb-8">
                 <details className="dropdown">
                     <summary className="m-1 btn bg-green-500 text-white text-xl font-semibold">Sort By <IoIosArrowDown /></summary>
                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-200 rounded-box w-52">
-                        <li onClick={()=>handleSortRating(sortedRating)}><a>Rating</a></li>
+                        <li onClick={()=> handleSortRating(sortedRating)}><a>Rating</a></li>
                         <li onClick={()=> handleSortPage(sortedTotalPage)}><a>Number of pages</a></li>
                         <li onClick={()=> handleSortPublishYear(sortedPublishYear)}><a>Publisher Year</a></li>
                     </ul>
