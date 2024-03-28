@@ -32,6 +32,13 @@ const NavBar = () => {
                                     ? "font-semibold"
                                     : " border-2 border-white px-5 py-2 rounded-lg"
                         }><a>Pages To Read</a></NavLink>
+                        <NavLink to="/faqs" className={({ isActive, isPending }) =>
+                            isActive
+                                ? "text-green-400 border border-green-400 px-5 py-2 rounded-lg font-semibold"
+                                : isPending
+                                    ? "font-semibold"
+                                    : " border-2 border-white px-5 py-2 rounded-lg"
+                        }><a>FAQS</a></NavLink>
                         <div className="lg:hidden flex flex-col items-center justify-center space-y-3 mt-4">
                             <a className="btn w-full bg-green-500 text-white text-xl work">Sign In</a>
                             <a className="btn w-full work text-white text-xl bg-blue-400">Sign up</a>
@@ -39,10 +46,10 @@ const NavBar = () => {
                     </ul>
 
                 </div>
-                <a className="btn btn-ghost work text-3xl">Novel Nest</a>
+                <a className="btn btn-ghost work text-3xl">Book Wander</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu work menu-horizontal px-1 text-xl space-x-7 ">
+                <ul className="menu work menu-horizontal px-1 text-xl ">
                     <NavLink to="/" className={({ isActive, isPending }) =>
                         isActive
                             ? "text-green-400 border border-green-400 px-5 py-2 rounded-lg font-semibold"
@@ -66,6 +73,13 @@ const NavBar = () => {
                                 ? "font-semibold"
                                 : " border-2 border-white px-5 py-2 rounded-lg"
                     }><a>Pages To Read</a></NavLink>
+                    <NavLink to="/faqs" className={({ isActive, isPending }) =>
+                            isActive
+                                ? "text-green-400 border border-green-400 px-5 py-2 rounded-lg font-semibold"
+                                : isPending
+                                    ? "font-semibold"
+                                    : " border-2 border-white px-5 py-2 rounded-lg"
+                        }><a>FAQS</a></NavLink>
                 </ul>
             </div>
             <div className="navbar-end space-x-4 hidden lg:flex">

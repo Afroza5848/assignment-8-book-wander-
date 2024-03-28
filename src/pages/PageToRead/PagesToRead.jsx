@@ -1,6 +1,6 @@
 //import React from 'react';
 
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, } from 'recharts';
 import { useEffect, useState } from 'react';
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
@@ -36,29 +36,31 @@ const PagesToRead = () => {
   // console.log();
   return (
     <div className='md:flex justify-center items-center my-12'>
-      <BarChart
-        width={1200}
-        height={400}
-        data={reChart}
-        margin={{
-          top: 20,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Bar dataKey="totalPage" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-          {reChart.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-          ))}
-        </Bar>
-        <Tooltip></Tooltip>
-        <Legend></Legend>
+      <ResponsiveContainer width="100%" aspect={2}>
+        <BarChart
 
-      </BarChart>
+          width={1200}
+          height={400}
+          data={reChart}
+          margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Bar dataKey="totalPage" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+            {reChart.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+            ))}
+          </Bar>
+          <Tooltip></Tooltip>
+          <Legend></Legend>
+        </BarChart>
+      </ResponsiveContainer>
     </div>
 
   );

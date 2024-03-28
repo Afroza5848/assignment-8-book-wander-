@@ -14,6 +14,7 @@ import PagesToRead from './pages/PageToRead/PagesToRead';
 import BookDetails from './components/BookDetails/BookDetails';
 import ReadBooks from './components/ReadBooks/ReadBooks';
 import WishlistBooks from './components/WishlistBooks/WishlistBooks';
+import Faqs from './components/Faqs/Faqs';
 
 
 
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
         path:"/books/:id",
         element: <BookDetails></BookDetails>,
         
+      },
+      {
+        path:"/faqs",
+        element: <Faqs></Faqs>
       }
     ]
   },

@@ -1,8 +1,10 @@
-# React + Vite
+# Website Name: Book Wander
+# Visit the live site: [Book Wander](assignment8-5848.surge.sh)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# features and characteristics
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse through a different collection of books.
+- View detailed information about each book including author, review, rating, etc.
+- Filter books by category.
+- Add books to favorites or wishlist (optional feature).
+- Option to see all read book name and total pages bar chart.
