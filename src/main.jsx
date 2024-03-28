@@ -15,6 +15,7 @@ import BookDetails from './components/BookDetails/BookDetails';
 import ReadBooks from './components/ReadBooks/ReadBooks';
 import WishlistBooks from './components/WishlistBooks/WishlistBooks';
 import Faqs from './components/Faqs/Faqs';
+import Contact from './components/Contact/Contact';
 
 
 
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path:"/faqs",
         element: <Faqs></Faqs>
+      },
+      {
+        path:"/contact",
+        element:<Contact></Contact>
       }
     ]
   },

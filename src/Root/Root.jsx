@@ -9,7 +9,6 @@ const Root = () => {
             <div className="container mx-auto px-2">
                 <NavBar></NavBar>
                 <Outlet></Outlet>
-
             </div>
             <Footer></Footer>
         </div>

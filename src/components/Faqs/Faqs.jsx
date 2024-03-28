@@ -16,7 +16,7 @@ const Faqs = () => {
                             </details>
                             <details className="w-full border rounded-lg">
                                 <summary className="px-4 py-6 focus:outline-none focus-visible:dark:ring-violet-600">When will my order be ready?</summary>
-                                <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-600">You will know your order is ready for pickup after you receive your second email, showing "Ready for Pickup". Bring your photo ID and web order confirmation number to the pickup counter. Most orders are processed in 24 business hours (Monday-Friday only).
+                                <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-600">You will know your order is ready for pickup after you receive your second email, showing Ready for Pickup. Bring your photo ID and web order confirmation number to the pickup counter. Most orders are processed in 24 business hours (Monday-Friday only).
                                 </p>
                             </details>
                             <details className="w-full border rounded-lg">

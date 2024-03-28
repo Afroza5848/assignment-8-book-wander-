@@ -39,6 +39,13 @@ const NavBar = () => {
                                     ? "font-semibold"
                                     : " border-2 border-white px-5 py-2 rounded-lg"
                         }><a>FAQS</a></NavLink>
+                        <NavLink to="/contact" className={({ isActive, isPending }) =>
+                            isActive
+                                ? "text-green-400 border border-green-400 px-5 py-2 rounded-lg font-semibold"
+                                : isPending
+                                    ? "font-semibold"
+                                    : " border-2 border-white px-5 py-2 rounded-lg"
+                        }><a>Contact Us</a></NavLink>
                         <div className="lg:hidden flex flex-col items-center justify-center space-y-3 mt-4">
                             <a className="btn w-full bg-green-500 text-white text-xl work">Sign In</a>
                             <a className="btn w-full work text-white text-xl bg-blue-400">Sign up</a>
@@ -80,6 +87,13 @@ const NavBar = () => {
                                     ? "font-semibold"
                                     : " border-2 border-white px-5 py-2 rounded-lg"
                         }><a>FAQS</a></NavLink>
+                        <NavLink to="/contact" className={({ isActive, isPending }) =>
+                            isActive
+                                ? "text-green-400 border border-green-400 px-5 py-2 rounded-lg font-semibold"
+                                : isPending
+                                    ? "font-semibold"
+                                    : " border-2 border-white px-5 py-2 rounded-lg"
+                        }><a>Contact Us</a></NavLink>
                 </ul>
             </div>
             <div className="navbar-end space-x-4 hidden lg:flex">
